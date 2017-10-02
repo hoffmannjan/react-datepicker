@@ -39040,7 +39040,9 @@
 	    };
 
 	    _this.handleDayClick = function (day, event) {
-	      return _this.props.onSelect(day, event);
+	      event.preventDefault();
+	      event.stopPropagation();
+	      _this.props.onSelect(day, event);
 	    };
 
 	    _this.handleDayMouseEnter = function (day) {
@@ -56243,10 +56245,14 @@
 	    }
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Month.__proto__ || Object.getPrototypeOf(Month)).call.apply(_ref, [this].concat(args))), _this), _this.handleDayClick = function (day, event) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      if (_this.props.onDayClick) {
 	        _this.props.onDayClick(day, event);
 	      }
 	    }, _this.handleDayMouseEnter = function (day) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      if (_this.props.onDayMouseEnter) {
 	        _this.props.onDayMouseEnter(day);
 	      }
@@ -56418,14 +56424,20 @@
 	    }
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Week.__proto__ || Object.getPrototypeOf(Week)).call.apply(_ref, [this].concat(args))), _this), _this.handleDayClick = function (day, event) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      if (_this.props.onDayClick) {
 	        _this.props.onDayClick(day, event);
 	      }
 	    }, _this.handleDayMouseEnter = function (day) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      if (_this.props.onDayMouseEnter) {
 	        _this.props.onDayMouseEnter(day);
 	      }
 	    }, _this.handleWeekClick = function (day, weekNumber, event) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      if (typeof _this.props.onWeekSelect === 'function') {
 	        _this.props.onWeekSelect(day, weekNumber, event);
 	      }
@@ -56568,10 +56580,14 @@
 	    }
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Day.__proto__ || Object.getPrototypeOf(Day)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function (event) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      if (!_this.isDisabled() && _this.props.onClick) {
 	        _this.props.onClick(event);
 	      }
 	    }, _this.handleMouseEnter = function (event) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      if (!_this.isDisabled() && _this.props.onMouseEnter) {
 	        _this.props.onMouseEnter(event);
 	      }
@@ -56985,6 +57001,8 @@
 	    }
 
 	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = WeekNumber.__proto__ || Object.getPrototypeOf(WeekNumber)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function (event) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      if (_this.props.onClick) {
 	        _this.props.onClick(event);
 	      }
@@ -57066,7 +57084,9 @@
 	      args[_key] = arguments[_key];
 	    }
 
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Time.__proto__ || Object.getPrototypeOf(Time)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function (time) {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Time.__proto__ || Object.getPrototypeOf(Time)).call.apply(_ref, [this].concat(args))), _this), _this.handleClick = function (time, event) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      if ((_this.props.minTime || _this.props.maxTime) && (0, _date_utils.isTimeInDisabledRange)(time, _this.props) || _this.props.excludeTimes && (0, _date_utils.isTimeDisabled)(time, _this.props.excludeTimes)) {
 	        return;
 	      }
