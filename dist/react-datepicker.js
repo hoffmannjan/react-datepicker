@@ -739,7 +739,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return date.clone().locale(_this.props.locale || _moment2.default.locale());
 	    };
 
-	    _this.increaseMonth = function () {
+	    _this.increaseMonth = function (event) {
+	      event.pre;
 	      _this.setState({
 	        date: _this.state.date.clone().add(1, 'month')
 	      }, function () {
@@ -747,7 +748,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    };
 
-	    _this.decreaseMonth = function () {
+	    _this.decreaseMonth = function (event) {
+	      event.preventDefault();
+	      event.stopPropagation();
 	      _this.setState({
 	        date: _this.state.date.clone().subtract(1, 'month')
 	      }, function () {

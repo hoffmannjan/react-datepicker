@@ -141,13 +141,16 @@ export default class Calendar extends React.Component {
 
   localizeMoment = date => date.clone().locale(this.props.locale || moment.locale())
 
-  increaseMonth = () => {
+  increaseMonth = (event) => {
+    event.pre
     this.setState({
       date: this.state.date.clone().add(1, 'month')
     }, () => this.handleMonthChange(this.state.date))
   }
 
-  decreaseMonth = () => {
+  decreaseMonth = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     this.setState({
       date: this.state.date.clone().subtract(1, 'month')
     }, () => this.handleMonthChange(this.state.date))
