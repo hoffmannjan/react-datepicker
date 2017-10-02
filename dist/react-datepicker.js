@@ -740,7 +740,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    _this.increaseMonth = function (event) {
-	      event.pre;
+	      event.preventDefault();
+	      event.stopPropagation();
 	      _this.setState({
 	        date: _this.state.date.clone().add(1, 'month')
 	      }, function () {
