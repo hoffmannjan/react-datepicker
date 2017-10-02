@@ -9,6 +9,8 @@ export default class WeekNumber extends React.Component {
   }
 
   handleClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (this.props.onClick) {
       this.props.onClick(event)
     }

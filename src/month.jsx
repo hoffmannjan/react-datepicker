@@ -35,12 +35,16 @@ export default class Month extends React.Component {
   }
 
   handleDayClick = (day, event) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (this.props.onDayClick) {
       this.props.onDayClick(day, event)
     }
   }
 
   handleDayMouseEnter = (day) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (this.props.onDayMouseEnter) {
       this.props.onDayMouseEnter(day)
     }

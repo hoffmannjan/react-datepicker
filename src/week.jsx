@@ -31,18 +31,24 @@ export default class Week extends React.Component {
   }
 
   handleDayClick = (day, event) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (this.props.onDayClick) {
       this.props.onDayClick(day, event)
     }
   }
 
   handleDayMouseEnter = (day) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (this.props.onDayMouseEnter) {
       this.props.onDayMouseEnter(day)
     }
   }
 
   handleWeekClick = (day, weekNumber, event) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (typeof this.props.onWeekSelect === 'function') {
       this.props.onWeekSelect(day, weekNumber, event)
     }

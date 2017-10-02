@@ -31,7 +31,9 @@ export default class Time extends React.Component {
     this.list.scrollTop = 30 * (multiplier * currH)
   }
 
-  handleClick = (time) => {
+  handleClick = (time, event) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (((this.props.minTime || this.props.maxTime) && isTimeInDisabledRange(time, this.props)) || (this.props.excludeTimes && isTimeDisabled(time, this.props.excludeTimes))) {
       return
     }
